@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//生成柱子的脚本
 public class ColumnController : MonoBehaviour
 {
     // 柱子列表
@@ -46,11 +46,10 @@ public class ColumnController : MonoBehaviour
     void Update()
     {
         _timeSinceLastSpawned += Time.deltaTime;
-        if (GameMode.Instance.gameOver == false && _timeSinceLastSpawned >= spawnRate)
+        if (GameMode.Instance.isGameStart && _timeSinceLastSpawned >= spawnRate)
         {
             _timeSinceLastSpawned = 0f;
             float yPos = Random.Range(yMin, yMax);
-            Debug.Log(yPos);
             _columns[_currentColumn].transform.position = new Vector2(xPos,yPos);
             _currentColumn++;
 

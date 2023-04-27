@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//控制背景移动的脚本
 
 public class BackGroundController : MonoBehaviour
 {
